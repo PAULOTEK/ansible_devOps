@@ -25,10 +25,15 @@
        name: app
        comment: Usuario de aplicacao
        uid: 500
-    - name: instalacao do maven
-      yum:
-       name: maven
-       state: latest
+    - name: Donwload do maven
+      get_url:
+        url: https://repo.maven.apache.org/maven2/org/apache/maven/apache-maven/3.1.0/apache-maven-3.1.0-bin.tar.gz
+        dest: /opt/apache-maven-3.1.0-bin.tar.gz
+    - name: Unzip do pacote maven
+      ansible.builtin.unarchive:
+        src: /opt/apache-maven-3.1.0-bin.tar.gz
+        dest: /opt/
+        remote_src: yes
     - name: instalacao do java
       yum:
         name: java-1.8.0-openjdk
