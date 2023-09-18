@@ -8,4 +8,4 @@ WorkingDirectory=/opt/notes -Djava.awt.headless=true -Djava.security.egd=file:/d
 SyslogIdentifier=notes-%i
 
 [Install]
-Wa
+WantedBy=multi-user.target
