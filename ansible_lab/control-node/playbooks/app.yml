@@ -60,7 +60,7 @@
     - name: Configurar servico do Systend
       template:
        src: etc/systemd/system/notes.service
-      src: /etc/systemd/system/notes.service
+       dest: /etc/systemd/system/notes.service
       notify: reload daemon
     - name: Iniciar servico notes
       services:
